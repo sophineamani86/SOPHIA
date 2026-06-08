@@ -236,7 +236,7 @@ Planned enhancements include:
 
 ### Sophia
 
-I am a second-year university student with a passion for technology, software development, and digital innovation.
+I am a second-year student at Mzumbe university with a passion for Mathematics Information and Communication technology, software development, and digital innovation.
 
 This project was developed as part of my practical learning journey in web development and database management. My goal is to create technology solutions that solve real-world challenges, especially in agriculture and livestock sectors.
 
@@ -257,6 +257,8 @@ For suggestions, collaboration, or project inquiries:
 * Developer: Sophia
 * Project: BARCO MILY COMPANY
 * Location: Tanzania
+* Phone number:0617203045
+* Registration number:14325092/t.24
 
 ---
 
@@ -275,3 +277,4 @@ Version: 1.0
 Status: Active Development
 
 Thank you for visiting this project. Your feedback and contributions are highly appreciated.
+@kadefue
