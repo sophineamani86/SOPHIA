@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawasiliano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span>🐝🌾</span>
+            BARCO MILY COMPANY
+        </a>
+        <nav>
+            <a href="bidhaa.html">Bidhaa</a>
+            <a href="elimu.html">Elimu</a>
+            <a href="mawasiliano.html">Mawasiliano</a>
+            <a href="admin_login.php">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Mawasiliano</h1>
+            <p>Tujifunzeni na tupatiane habari</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2>Habari za Mawasiliano</h2>
+                <div class="info-item">
+                    <h3>📞 Simu</h3>
+                    <p>+255 789 123 456</p>
+                </div>
+                <div class="info-item">
+                    <h3>📧 Email</h3>
+                    <p>barcomily@example.com</p>
+                </div>
+                <div class="info-item">
+                    <h3>📍 Mahali</h3>
+                    <p>Dar es Salaam, Tanzania</p>
+                </div>
+                <div class="info-item">
+                    <h3>🕐 Wakt wa Kazi</h3>
+                    <p>Jumatatu - Ijumaa: 8:00 - 17:00</p>
+                    <p>Jumamosi - Jumapili: 9:00 - 14:00</p>
+                </div>
+            </div>
+
+            <form class="contact-form" method="POST" action="submit_contact.php">
+                <h2>Jifunzeni na Tupatiane</h2>
+                <div class="form-group">
+                    <label for="jina">Jina Lako:</label>
+                    <input type="text" id="jina" name="jina" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="simu">Simu:</label>
+                    <input type="tel" id="simu" name="simu" required>
+                </div>
+                <div class="form-group">
+                    <label for="ujumbe">Ujumbe:</label>
+                    <textarea id="ujumbe" name="ujumbe" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="primary-button">Tuma Ujumbe</button>
+            </form>
+        </section>
+
+        <section class="faq">
+            <h2>Swali Maalum</h2>
+            <div class="faq-item">
+                <h3>Je, kuna ajili ya kuweka amri?</h3>
+                <p>Hapana, lakini inapendeza kuwa haraka. Tuma ujumbe na tutakupatia.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Je, kuna huduma ya mwaliko?</h3>
+                <p>Hapana kwa sasa. Lakini tunaonekana mwezi ujao.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Je, kuna discount kwa kumfanya mkutano?</h3>
+                <p>Ndiyo! Karibu ukae na tumulia kumfanya discount.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BARCO MILY COMPANY. Haki zote zimehifadhiwa.</p>
+        <p>📞 +255 789 123 456 | 📧 barcomily@example.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

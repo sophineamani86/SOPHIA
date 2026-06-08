@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidhaaY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span>🐝🌾</span>
+            BARCO MILY COMPANY
+        </a>
+        <nav>
+            <a href="bidhaa.html">Bidhaa</a>
+            <a href="elimu.html">Elimu</a>
+            <a href="mawasiliano.html">Mawasiliano</a>
+            <a href="admin_login.php">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Bidhaa Zetu</h1>
+            <p>Bidhaa za ufungaji, kilimo, na vifaa vya kalidad</p>
+        </section>
+
+        <section class="products-section">
+            <div class="filters">
+                <h3>Aina ya Bidhaa</h3>
+                <label><input type="radio" name="aina" value="all" checked> Zote</label>
+                <label><input type="radio" name="aina" value="asili"> Asali</label>
+                <label><input type="radio" name="aina" value="vifaa"> Vifaa</label>
+                <label><input type="radio" name="aina" value="kilimo"> Kilimo</label>
+                <label><input type="radio" name="aina" value="kuku"> Kuku</label>
+            </div>
+
+            <div id="products" class="products-grid">
+                <div class="loader">Inapakia bidhaa...</div>
+            </div>
+        </section>
+
+        <section class="order-info">
+            <h2>Jinsi ya Kuagiza</h2>
+            <ol>
+                <li>Chagua bidhaa unazopenda</li>
+                <li>Ingiza habari yako - jina, email, simu</li>
+                <li>Tutataka na kutupatia</li>
+                <li>Pokea bidhaa yako kwa usalama</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BARCO MILY COMPANY. Haki zote zimehifadhiwa.</p>
+        <p>📞 +255 789 123 456 | 📧 barcomily@example.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadProducts);
+
+        function loadProducts() {
+            fetch('api.php?action=get_bidhaa')
+                .then(r => r.json())
+                .then(data => {
+                    if (!data.success) throw new Error(data.message);
+                    displayProducts(data.bidhaa);
+                })
+                .catch(err => {
+                    document.getElementById('products').innerHTML = `<p class="error">Kosa: ${err.message}</p>`;
+                });
+        }
+
+        function displayProducts(bidhaa) {
+            const container = document.getElementById('products');
+            if (!bidhaa.length) {
+                container.innerHTML = '<p>Hakuna bidhaa za sasa. Karibu baadaye.</p>';
+                return;
+            }
+            container.innerHTML = bidhaa.map(b => `
+                <div class="product-card" data-aina="${b.aina}">
+                    <div class="product-image">
+                        <img src="${b.picha ? b.picha : 'images/default-product.svg'}" alt="${b.jina}">
+                    </div>
+                    <h3>${b.jina}</h3>
+                    <p class="aina">${b.aina}</p>
+                    <p class="maelezo">${b.maelezo || ''}</p>
+                    <div class="product-footer">
+                        <strong>${b.bei} Tsh</strong>
+                        <button onclick="addToCart(${b.id}, '${b.jina}', ${b.bei})">Ongeza</button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Filter by type
+            document.querySelectorAll('input[name="aina"]').forEach(r => r.addEventListener('change', () => {
+                const val = document.querySelector('input[name="aina"]:checked').value;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (val === 'all') card.style.display = '';
+                    else card.style.display = (card.getAttribute('data-aina') === val) ? '' : 'none';
+                });
+            }));
+        }
+
+        function addToCart(id, jina, bei) {
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existing = cart.find(x => x.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ id, jina, bei, qty: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('✓ ' + jina + ' imeongezwa kwenye kadi');
+        }
+    </script>
+</body>
+</html>
