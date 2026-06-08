@@ -1,351 +1,277 @@
-# 🐝 BARCO MILY COMPANY - Ufungaji na Kilimo System
-**Website ya Ufungaji wa Asali na Kilimo - Complete Business Solution**
+# 🐝 BARCO MILY COMPANY - Beekeeping and Agriculture Management System
+
+**Modern Web-Based Solution for Beekeeping, Agriculture, and Farm Business Management**
 
 ---
 
-## 📋 Muhtasari wa Mfumo
+## 📋 Project Overview
 
-Huu ni mfumo kamili wa web kwa **BARCO MILY COMPANY** unayoangalia:
-- **Ufungaji wa Asali** (Beekeeping) 🐝
-- **Kilimo** (Agriculture) 🌾
-- **Biashara Online** (E-commerce)
+BARCO MILY COMPANY is a comprehensive web-based management system designed to support beekeeping and agricultural activities. The platform helps farmers, beekeepers, and customers interact through a modern digital environment.
 
-Mfumo una sehemu mbili kuu:
-1. **Frontend wa Wateja** - Kuangalia bidhaa, jifunza, kuagiza
-2. **Backend wa Admin** - Kuongeza bidhaa, rekodi, kusimamia amri
+The system focuses on:
 
----
+* 🐝 Beekeeping Management
+* 🌾 Agriculture Management
+* 🛒 Product Sales and Business Operations
+* 📚 Agricultural Education and Awareness
+* 📊 Farm Record Management
 
-## 🗂️ Muundo wa Faili
-
-```
-D:\BARCO MILY COMPANY\
-├── index.html              # Home page
-├── bidhaa.html            # Products page
-├── elimu.html             # Education/Learning page
-├── mawasiliano.html       # Contact page
-├── admin_login.php        # Admin login
-├── admin.php              # Admin dashboard
-├── admin_logout.php       # Admin logout
-├── db.php                 # Database configuration
-├── api.php                # Frontend API endpoints
-├── submit_contact.php     # Contact form handler
-├── styles.css             # Main styling
-└── script.js              # JavaScript functionality
-```
+This project demonstrates practical web development skills while addressing real-world agricultural challenges.
 
 ---
 
-## 🛠️ Setup wa Mfumo
+## 🎯 Project Objectives
 
-### 1. **Mahitaji ya Mfumo**
-- PHP 7.4+
-- MySQL 5.7+
-- Apache/Nginx web server
-- Modern web browser
+The primary objectives of this system are:
 
-### 2. **Database Setup**
-
-Mfumo unaundwa database au inakusanyaji kulingana na `db.php`:
-- Database: `barco_mily_db`
-- Tables: `bidhaa`, `ufugaji`, `kilimo`, `amri`
-
-**Database Connection:**
-```php
-Host: localhost
-User: root
-Password: (hakuna)
-Database: barco_mily_db
-```
-
-Badilisha `db.php` kama connection yako ni tofauti.
-
-### 3. **Installation Steps**
-
-1. **Copy files kwenye web directory:**
-   ```
-   Copy all files to: C:\xampp\htdocs\barco-mily\
-   (au ambapo PHP server yako)
-   ```
-
-2. **Create database:**
-   - Fungua phpMyAdmin: `http://localhost/phpmyadmin`
-   - Click "New" to create database
-   - Mfumo utaundwa tables otomatiki
-
-3. **Start server:**
-   ```bash
-   # Kwa XAMPP
-   Start Apache and MySQL
-   
-   # Kwa command line
-   php -S localhost:8000
-   ```
-
-4. **Access website:**
-   ```
-   http://localhost/barco-mily/ (Frontend)
-   http://localhost/barco-mily/admin_login.php (Admin)
-   ```
+* To digitize beekeeping and agricultural record management.
+* To provide farmers with easy access to agricultural information.
+* To simplify product management and customer orders.
+* To improve business efficiency through technology.
+* To create a user-friendly platform for farm management.
 
 ---
 
-## 📖 Jinsi ya Kuitumia
+## ✨ Key Features
 
-### 👥 **Kwa Wateja (Frontend)**
+### Customer Side
 
-#### 1. **Home Page** (`index.html`)
-- Angalia huduma zote
-- Kamatia mkakati wa biashara
-- Direct links kwa bidhaa na elimu
+* Responsive homepage
+* Product catalog
+* Educational resources
+* Contact and support page
+* Order management functionality
 
-#### 2. **Bidhaa Page** (`bidhaa.html`)
-- Angalia bidhaa zote
-- Filter kwa aina: Asali, Vifaa, Nektari, Kilimo
-- Ongeza kwenye kadi (cart)
-- Kuagiza haraka
+### Administrator Side
 
-#### 3. **Elimu Page** (`elimu.html`)
-- Matutoria muhimu kuhusu ufungaji
-- Matukio ya asali
-- Tips ya kilimo
-- Q&A ya tatizo
-
-#### 4. **Mawasiliano** (`mawasiliano.html`)
-- Tuma ujumbe
-- Habari za mawasiliano
-- FAQ
+* Secure login system
+* Product management
+* Beekeeping records management
+* Agriculture records management
+* Customer order tracking
+* Dashboard statistics
 
 ---
 
-### 🔐 **Kwa Admin (Backend)**
+## 🛠️ Technologies Used
 
-#### 1. **Admin Login** (`admin_login.php`)
+### Frontend
 
-**Default Credentials:**
-```
-Username: admin
-Password: ufugaji123
-```
+* HTML5
+* CSS3
+* JavaScript
+* Responsive Design
 
-> **MUHIMU:** Badilisha password katika production!
+### Backend
 
-#### 2. **Admin Dashboard** (`admin.php`)
+* PHP
+* MySQL Database
 
-**Kazi za Admin:**
-- ➕ **Ongeza Bidhaa** - Jina, Aina, Bei, Kiwango
-- 🐝 **Ongeza Ufugaji** - Idadi, Asali, Bei, Chakula
-- 🌾 **Ongeza Kilimo** - Zao, Sehemu, Kiwango, Bei
-- 📊 **View Statistics** - Jumla ya bidhaa, amri, rekodi
+### Development Tools
+
+* Git
+* GitHub
+* XAMPP
 
 ---
 
-## 🗄️ Database Schema
+## 📁 Project Structure
 
-### Table: `bidhaa` (Products)
-```sql
-id (INT) - Primary Key
-jina (VARCHAR) - Product name
-aina (ENUM) - Type: asili, vifaa, nektari, kilimo
-bei (INT) - Price in Tsh
-kiwango (INT) - Stock quantity
-maelezo (TEXT) - Description
-picha (VARCHAR) - Image path
-imeundwa, imebadilishwa (DATETIME) - Timestamps
-```
-
-### Table: `ufugaji` (Beekeeping Records)
-```sql
-id (INT) - Primary Key
-tarehe (DATE) - Date
-idadi_mbuzi (INT) - Number of hives
-asali_kuzaliana (INT) - Honey produced
-asali_kuuzwa (INT) - Honey sold
-asali_bei (INT) - Price per kg
-chakula_bei (INT) - Feed cost
-maelezo (TEXT) - Notes
-imeundwa (DATETIME) - Timestamp
-```
-
-### Table: `kilimo` (Agriculture Records)
-```sql
-id (INT) - Primary Key
-tarehe (DATE) - Date
-zao (VARCHAR) - Crop name
-sehemu (DECIMAL) - Land size in acres
-kiwango_inchi (INT) - Rainfall inches
-asali_kuzaliana (DECIMAL) - Harvest in kg
-bei_kwa_kilo (INT) - Price per kg
-maelezo (TEXT) - Notes
-imeundwa (DATETIME) - Timestamp
-```
-
-### Table: `amri` (Orders)
-```sql
-id (INT) - Primary Key
-jina_mteja (VARCHAR) - Customer name
-barua_pepe (VARCHAR) - Email
-simu (VARCHAR) - Phone
-bidhaa_ids (JSON) - Product IDs
-idadi_bidhaa (JSON) - Quantities
-bei_jumla (INT) - Total price
-hali (ENUM) - Status: mpya, inaandaliwa, imetumwa, imekamilika
-imeundwa, imebadilishwa (DATETIME) - Timestamps
+```text
+BARCO MILY COMPANY/
+│
+├── index.html
+├── bidhaa.html
+├── elimu.html
+├── mawasiliano.html
+├── admin_login.php
+├── admin.php
+├── admin_logout.php
+├── db.php
+├── api.php
+├── submit_contact.php
+├── styles.css
+└── script.js
 ```
 
 ---
 
-## 🎨 Sehemu za Styling
+## 💻 System Requirements
 
-### Color Scheme
-- **Primary:** #ff9800 (Orange)
-- **Secondary:** #f57c00 (Dark Orange)
-- **Text:** #333 (Dark Gray)
-- **Background:** #f9f9f9 (Light Gray)
+Before running the project, ensure you have:
 
-### Responsive Design
-- Mobile-friendly
-- Tablet optimized
-- Desktop layout
-- Media queries for all screen sizes
+* PHP 7.4 or above
+* MySQL Database
+* Apache Server (XAMPP Recommended)
+* Modern Web Browser
 
 ---
 
-## 🔒 Security Tips
+## 🚀 Installation Guide
 
-### 1. **Change Admin Credentials**
-Edit `admin_login.php`:
-```php
-$admin_user = 'your_new_username';
-$admin_pass = 'your_new_password';
-```
+### Step 1: Clone Repository
 
-### 2. **Database Connection**
-Edit `db.php` with your credentials:
-```php
-$dbHost = 'localhost';
-$dbName = 'your_db_name';
-$dbUser = 'your_db_user';
-$dbPass = 'your_db_password';
-```
-
-### 3. **HTTPS**
-- Use SSL certificate in production
-- Update URLs to `https://`
-
-### 4. **Input Validation**
-- Always validate user input
-- Use prepared statements (already used)
-- Sanitize output
-
----
-
-## 🚀 Deployment
-
-### Local Testing
 ```bash
-# Start PHP server
-php -S localhost:8000
-
-# Open in browser
-http://localhost:8000
+git clone https://github.com/your-username/barco-mily-company.git
 ```
 
-### Production Hosting
-1. Upload files to web server
-2. Create database on MySQL server
-3. Update database credentials in `db.php`
-4. Ensure PHP extensions enabled: PDO, MySQL
-5. Set proper file permissions (chmod 644 for files, 755 for directories)
-6. Use HTTPS certificate
+### Step 2: Move Project Files
 
----
+Place the project inside your web server directory:
 
-## 🛠️ API Endpoints
-
-### Frontend API
-```
-GET /api.php?action=get_bidhaa
-  - Returns all available products
-
-POST /api.php?action=submit_order
-  - Params: jina, email, simu, bidhaa_ids, idadi, bei_jumla
-  - Creates new order
+```text
+C:\xampp\htdocs\barco-mily-company\
 ```
 
----
+### Step 3: Create Database
 
-## 📱 Features
+Database Name:
 
-✅ Responsive web design
-✅ Product management
-✅ Beekeeping records tracking
-✅ Agriculture records tracking
-✅ Order management system
-✅ Customer contact form
-✅ Educational content
-✅ Admin dashboard
-✅ User authentication
-✅ Database persistence
+```sql
+barco_mily_db
+```
 
----
+Import the database tables or allow the system to create them automatically.
 
-## 🐛 Troubleshooting
+### Step 4: Configure Database
 
-### Database Connection Error
-- Check MySQL is running
-- Verify credentials in `db.php`
-- Ensure database exists
+Update the database credentials inside:
 
-### Admin Login Not Working
-- Check credentials in `admin_login.php`
-- Ensure sessions are enabled in PHP
-- Clear browser cookies
+```php
+db.php
+```
 
-### Products Not Loading
-- Check API endpoint is working
-- Verify database has records
-- Check browser console for errors
+### Step 5: Start Server
 
-### CSS/JS Not Loading
-- Verify file paths are correct
-- Check file permissions
-- Clear browser cache
+Start:
+
+* Apache
+* MySQL
+
+Then open:
+
+```text
+http://localhost/barco-mily-company
+```
 
 ---
 
-## 📞 Support
+## 🗄️ Database Modules
 
-**Contact Information:**
-- 📱 Phone: +255 789 123 456
-- 📧 Email: barcomily@example.com
-- 📍 Location: Dar es Salaam, Tanzania
+### Products Module
+
+Stores product information such as:
+
+* Product Name
+* Category
+* Price
+* Quantity
+* Description
+
+### Beekeeping Module
+
+Stores records such as:
+
+* Honey Production
+* Honey Sales
+* Hive Management
+* Operational Costs
+
+### Agriculture Module
+
+Stores records such as:
+
+* Crop Information
+* Farm Size
+* Harvest Quantity
+* Production Costs
+
+### Orders Module
+
+Stores:
+
+* Customer Information
+* Product Orders
+* Order Status
+* Total Cost
+
+---
+
+## 📱 Responsive Design
+
+The system is fully responsive and optimized for:
+
+* Desktop Computers
+* Tablets
+* Mobile Phones
+
+---
+
+## 🔒 Security Features
+
+* Secure administrator login
+* Session management
+* Database protection using prepared statements
+* Input validation and sanitization
+* Password protection
+
+---
+
+## 🌟 Future Improvements
+
+Planned enhancements include:
+
+* Online Payment Integration
+* SMS Notifications
+* Email Notifications
+* Mobile Application
+* Advanced Analytics Dashboard
+* Weather Forecast Integration
+* Inventory Management System
+* Multi-User Access Control
+
+---
+
+## 👩‍💻 About the Developer
+
+### Sophia
+
+I am a second-year university student with a passion for technology, software development, and digital innovation.
+
+This project was developed as part of my practical learning journey in web development and database management. My goal is to create technology solutions that solve real-world challenges, especially in agriculture and livestock sectors.
+
+I am continuously improving my skills in:
+
+* Web Development
+* Database Management
+* Software Engineering
+* Information Systems
+* Agricultural Technology Solutions
+
+---
+
+## 📞 Contact
+
+For suggestions, collaboration, or project inquiries:
+
+* Developer: Sophia
+* Project: BARCO MILY COMPANY
+* Location: Tanzania
 
 ---
 
 ## 📄 License
 
-© 2026 BARCO MILY COMPANY. All Rights Reserved.
+This project is developed for educational and portfolio purposes.
+
+© 2026 Sophia. All Rights Reserved.
 
 ---
 
-## 🔄 Updates & Maintenance
+## ⭐ Project Status
 
-### Regular Tasks
-- Backup database weekly
-- Monitor server logs
-- Update PHP/MySQL regularly
-- Review customer orders
-- Update product inventory
+Version: 1.0
 
-### Future Enhancements
-- Payment gateway integration
-- Email notifications
-- SMS alerts
-- Mobile app
-- Analytics dashboard
-- Social media integration
+Status: Active Development
 
----
-
-**Happy farming and beekeeping! 🐝🌾**
+Thank you for visiting this project. Your feedback and contributions are highly appreciated.
